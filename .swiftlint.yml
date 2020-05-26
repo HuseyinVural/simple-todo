@@ -1,0 +1,258 @@
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+- Pods
+- DH/VersaPlayer Static Pod Files
+- DH/Rewritten/General Usage/General View/Text Kit
+
+opt_in_rules: # some rules are only opt-in
+- anyobject_protocol
+- array_init
+#- attributes @objc patlatmadiginda koyariz
+- closure_body_length
+- closure_end_indentation
+- closure_spacing
+- contains_over_first_not_nil
+#- convenience_type discuss
+- discouraged_object_literal
+#- discouraged_optional_boolean later
+#- discouraged_optional_collection later
+- empty_count
+- empty_string
+- empty_xctest_method
+- explicit_init
+- fallthrough
+#- fatal_error_message
+- file_name
+- first_where
+#- force_unwrapping later
+- function_default_parameter_at_end
+#- identical_operands
+#- implicitly_unwrapped_optional later
+- legacy_random
+#- let_var_whitespace later
+- literal_expression_end_indentation
+#- missing_docs nirvana
+#- modifier_order later
+- multiline_arguments
+- multiline_function_chains
+- multiline_parameters
+#- no_grouping_extension discuss
+- notification_center_detachment
+- number_separator
+- operator_usage_whitespace
+- overridden_super_call
+- override_in_extension
+#- pattern_matching_keywords check later
+#- private_action later
+#- private_outlet later
+#- private_over_fileprivate later?
+- prohibited_super_call
+- protocol_property_accessors_order
+- redundant_discardable_let
+- redundant_nil_coalescing
+#- redundant_type_annotation ??
+- required_enum_case
+- single_test_class
+- sorted_first_last
+- sorted_imports
+- static_operator
+#- strict_fileprivate ??
+- toggle_bool
+- unused_import
+#- vertical_parameter_alignment_on_call ??
+#- vertical_whitespace_between_cases
+- yoda_condition
+
+disabled_rules:
+- trailing_whitespace
+- vertical_parameter_alignment
+
+line_length: 500
+
+type_name:
+  min_length: 3 # only warning
+  max_length: # warning and error
+    warning: 60
+    error: 70
+  excluded:
+    - in # excluded via string array
+    - to
+    - id
+
+identifier_name:
+  min_length: 3 # only warning
+  excluded:
+    - in
+    - to
+    - id
+
+# severity rules
+anyobject_protocol:
+  severity: error
+
+array_init:
+  severity: error
+
+closing_brace:
+  severity: error
+
+closure_body_length:
+  severity: error
+
+closure_end_indentation:
+  severity: error
+
+closure_parameter_position:
+  severity: error
+
+closure_spacing:
+  severity: error
+
+colon:
+  severity: error
+
+comma:
+  severity: error
+
+compiler_protocol_init:
+  severity: error
+
+contains_over_first_not_nil:
+  severity: error
+
+control_statement:
+  severity: error
+
+discouraged_direct_init:
+  severity: error
+
+discouraged_object_literal:
+  severity: error
+
+empty_count:
+  severity: error
+
+empty_parameters:
+  severity: error
+
+empty_parentheses_with_trailing_closure:
+  severity: error
+
+empty_string:
+  severity: error
+
+explicit_init:
+  severity: error
+
+fallthrough:
+  severity: error
+
+first_where:
+  severity: error
+
+for_where:
+  severity: error
+
+identical_operands:
+  severity: error
+
+implicity_getter:
+  severity: error
+
+legacy_random:
+  severity: error
+
+literal_expression_end_indentation:
+  severity: error
+
+mark:
+  severity: error
+
+multiline_arguments:
+  severity: error
+
+multiline_function_chains:
+  severity: error
+
+multiline_parameters:
+  severity: error
+
+opening_brace:
+  severity: error
+
+operator_usage_whitespace:
+  severity: error
+
+operator_whitespace:
+  severity: error
+
+overridden_super_call:
+  severity: error
+
+override_in_extension:
+  severity: error
+
+prohibited_super_call:
+  severity: error
+
+protocol_property_accessors_order:
+  severity: error
+
+redundant_discardable_let:
+  severity: error
+
+redundant_nil_coalescing:
+  severity: error
+
+redundant_void_return:
+  severity: error
+
+required_enum_case:
+  severity: error
+
+shorthand_operator:
+  severity: error
+
+statement_position:
+  severity: error
+
+sorted_first_last:
+  severity: error
+
+switch_case_alignment:
+  severity: error
+
+syntactic_sugar:
+  severity: error
+
+toggle_bool:
+  severity: error
+
+trailing_comma:
+  severity: error
+
+trailing_newline:
+  severity: error
+
+trailing_whitespace:
+  severity: error
+
+unneeded_break_in_switch:
+  severity: error
+
+unused_closure_parameter:
+  severity: error
+
+unused_control_flow_label:
+  severity: error
+
+unused_enumerated:
+  severity: error
+
+vertical_parameter_alignment:
+  severity: error
+
+vertical_whitespace:
+  severity: error
+
+yoda_condition:
+  severity: error
