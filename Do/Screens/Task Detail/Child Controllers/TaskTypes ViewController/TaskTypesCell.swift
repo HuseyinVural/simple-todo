@@ -26,4 +26,10 @@ class TaskTypesCell: UICollectionViewCell, Configurable {
     self.imageView.image = data.image
     self.imageView.tintColor = data.color
   }
+  
+  override var isSelected: Bool {
+    didSet {
+      self.indicatorView.isHidden = !self.isSelected
+    }
+  }
 }

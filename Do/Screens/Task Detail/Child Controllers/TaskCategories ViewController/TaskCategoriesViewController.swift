@@ -21,6 +21,7 @@ class TaskCategoriesViewController: UIViewController {
 extension TaskCategoriesViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    (self.parent as? TaskDetailViewController)?.viewModel.setTaskCategories(category: TaskCategories.allCases[indexPath.row])
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

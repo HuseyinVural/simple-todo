@@ -8,6 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalenderPopupViewController" customModule="Do" customModuleProvider="target">
             <connections>
+                <outlet property="calender" destination="tlE-vG-cFX" id="omz-yc-2Id"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -84,6 +85,10 @@
                                             <color key="value" cocoaTouchSystemColor="darkTextColor"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="R1p-IO-eJX"/>
+                                        <outlet property="delegate" destination="-1" id="8gg-nF-n7n"/>
+                                    </connections>
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gie-2n-yfD">
                                     <rect key="frame" x="20" y="350" width="374" height="50"/>
@@ -100,6 +105,9 @@
                                             <integer key="value" value="6"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="tapSelectAction:" destination="-1" eventType="touchUpInside" id="BWX-yb-5ZO"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

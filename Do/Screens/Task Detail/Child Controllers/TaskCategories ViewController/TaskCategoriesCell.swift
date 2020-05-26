@@ -22,4 +22,10 @@ class TaskCategoriesCell: UICollectionViewCell, Configurable {
     self.indicatorView.fillColor = data.color
     self.titleLabel.text = data.title
   }
+  
+  override var isSelected: Bool {
+    didSet {
+      self.indicatorView.isHidden = !self.isSelected
+    }
+  }
 }

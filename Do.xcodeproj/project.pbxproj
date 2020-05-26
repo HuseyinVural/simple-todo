@@ -36,6 +36,8 @@
 		0673F767247D32B600A9C8C1 /* CalenderPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0673F765247D32B600A9C8C1 /* CalenderPopupViewController.swift */; };
 		0673F768247D32B600A9C8C1 /* CalenderPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0673F766247D32B600A9C8C1 /* CalenderPopupViewController.xib */; };
 		0673F76A247D336100A9C8C1 /* BaseXIBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0673F769247D336100A9C8C1 /* BaseXIBViewController.swift */; };
+		0673F76D247D38B200A9C8C1 /* CalenderPopupDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0673F76C247D38B200A9C8C1 /* CalenderPopupDelegate.swift */; };
+		0673F76F247D3BEE00A9C8C1 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0673F76E247D3BEE00A9C8C1 /* Date+Extensions.swift */; };
 		06C176F5247C0F3B005CB553 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 06C176F4247C0F3B005CB553 /* .swiftlint.yml */; };
 		827200D552F69383D4D04385 /* Pods_Do.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F112A7432D59AB1EB66A7E4A /* Pods_Do.framework */; };
 /* End PBXBuildFile section */
@@ -72,6 +74,8 @@
 		0673F765247D32B600A9C8C1 /* CalenderPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderPopupViewController.swift; sourceTree = "<group>"; };
 		0673F766247D32B600A9C8C1 /* CalenderPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalenderPopupViewController.xib; sourceTree = "<group>"; };
 		0673F769247D336100A9C8C1 /* BaseXIBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseXIBViewController.swift; sourceTree = "<group>"; };
+		0673F76C247D38B200A9C8C1 /* CalenderPopupDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderPopupDelegate.swift; sourceTree = "<group>"; };
+		0673F76E247D3BEE00A9C8C1 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		06C176F4247C0F3B005CB553 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		29F991E2C4CE4DD08B72B11D /* Pods-Do.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Do.release.xcconfig"; path = "Target Support Files/Pods-Do/Pods-Do.release.xcconfig"; sourceTree = "<group>"; };
 		75534E688023EE711F405F93 /* Pods-Do.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Do.debug.xcconfig"; path = "Target Support Files/Pods-Do/Pods-Do.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 			children = (
 				0619ECA6247C5A1E00A59761 /* UIColor+Extensions.swift */,
 				0619ECA8247C5EAE00A59761 /* UIView+Extensions.swift */,
+				0673F76E247D3BEE00A9C8C1 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -276,10 +281,19 @@
 		0673F760247D322800A9C8C1 /* Calender Popup */ = {
 			isa = PBXGroup;
 			children = (
+				0673F76B247D38A100A9C8C1 /* Protocols */,
 				0673F765247D32B600A9C8C1 /* CalenderPopupViewController.swift */,
 				0673F766247D32B600A9C8C1 /* CalenderPopupViewController.xib */,
 			);
 			path = "Calender Popup";
+			sourceTree = "<group>";
+		};
+		0673F76B247D38A100A9C8C1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0673F76C247D38B200A9C8C1 /* CalenderPopupDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		0FD44D0A51F1DDF971B576A1 /* Frameworks */ = {
@@ -450,8 +464,10 @@
 				0619EC8D247C517000A59761 /* Storyboards.swift in Sources */,
 				0619ECA2247C56FC00A59761 /* TaskTypesCell.swift in Sources */,
 				0619EC96247C544D00A59761 /* BaseViewController.swift in Sources */,
+				0673F76F247D3BEE00A9C8C1 /* Date+Extensions.swift in Sources */,
 				0619EC91247C53B200A59761 /* TaskListViewController.swift in Sources */,
 				0619ECA7247C5A1E00A59761 /* UIColor+Extensions.swift in Sources */,
+				0673F76D247D38B200A9C8C1 /* CalenderPopupDelegate.swift in Sources */,
 				0619EC89247C4D0800A59761 /* TaskCategories.swift in Sources */,
 				0619EC85247C49CC00A59761 /* TaskTypes.swift in Sources */,
 				0619EC87247C4BD400A59761 /* Images.swift in Sources */,
