@@ -8,6 +8,7 @@
 
 import UIKit
 import FSCalendar
+import PopupDialog
 
 class TaskDetailViewController: BaseViewController {
   
@@ -15,6 +16,9 @@ class TaskDetailViewController: BaseViewController {
   @IBOutlet weak var descPlaceholder: UILabel!
   @IBOutlet weak var descTextView: UITextView!
   @IBOutlet weak var selectedDateLabel: UILabel!
+  @IBOutlet weak var taskCategoriesView: TaskCategoriesView!
+  @IBOutlet weak var taskTypeView: TaskTypesView!
+  @IBOutlet weak var confirmButton: UIButton!
   
   var viewModel: TaskDetailViewModelable = TaskDetailViewModel()
   
@@ -26,10 +30,19 @@ class TaskDetailViewController: BaseViewController {
   
   func bindActions() {
     viewModel.changedSelectedDataLabel = changedSelectedDataLabel()
+    taskCategoriesView.parent = self
+    taskTypeView.parent = self
   }
   
   func setDefaultUI() {
-    selectedDateLabel.text = Date().dateToStirng()
+    DispatchQueue.main.async {
+      self.titleField.text = self.viewModel.task.title
+      self.descTextView.text = self.viewModel.task.desc
+      self.descPlaceholder.isHidden = !self.descTextView.text.isEmpty
+      self.selectedDateLabel.text = self.viewModel.task.date.dateToStirng()
+      self.title = self.viewModel.title
+      self.confirmButton.setTitle(self.viewModel.confirmTitle, for: .normal)
+    }
   }
 
   final func changedSelectedDataLabel() -> (_ date: String) -> Void {
@@ -49,11 +62,22 @@ class TaskDetailViewController: BaseViewController {
   }
   
   @IBAction func tapDeleteAction(_ sender: Any) {
-    print("Delete")
+    viewModel.delete {
+      self.showSuccessHud()
+      self.navigationController?.popViewController(animated: true)
+    }
   }
   
   @IBAction func tapSaveAction(_ sender: Any) {
-    print("Save")
+    viewModel.save(title: titleField.text,
+                   desc: descTextView.text,
+                   success: {
+                    showSuccessHud()
+    }, error: { message in
+      let popup = PopupDialog(title: Strings.Errors.genericTitle, message: message)
+      popup.addButtons([CancelButton(title: Strings.Buttons.okey) {}])
+      self.present(popup, animated: true, completion: nil)
+    })
   }
   
 }

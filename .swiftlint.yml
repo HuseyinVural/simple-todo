@@ -65,8 +65,10 @@ opt_in_rules: # some rules are only opt-in
 disabled_rules:
 - trailing_whitespace
 - vertical_parameter_alignment
+- weak_delegate
+- sorted_imports
 
-line_length: 500
+line_length: 300
 
 type_name:
   min_length: 3 # only warning

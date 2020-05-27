@@ -7,23 +7,41 @@
 //
 
 import UIKit
+import CoreData
 
 class TaskListViewController: BaseViewController {
   
+  @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var dateTitle: UILabel!
+  
+  var viewModel: TaskListViewModelable = TaskListViewModel()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    // Do any additional setup after loading the view.
+    bindActions()
   }
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destination.
-   // Pass the selected object to the new view controller.
-   }
-   */
+  func bindActions() {
+    tableView.delegate = viewModel.tableDelegate
+    tableView.dataSource = viewModel.tableDataSource
+    viewModel.dataLoaded = dataUpdated()
+    viewModel.pushViewController = pushViewController()
+    viewModel.loadTask()
+    DispatchQueue.main.async {
+      self.tableView.rowHeight = 100
+      self.dateTitle.text = self.viewModel.dateTitle
+    }
+  }
   
+  final func dataUpdated() -> () -> Void {
+    return { [weak self] in
+      DispatchQueue.main.async {
+        self?.tableView.reloadData()
+      }
+    }
+  }
+  
+  @IBAction func addNewTask(_ sender: Any) {
+    viewModel.showNewTaskDetail(selectedDate: viewModel.targetDate)
+  }
 }

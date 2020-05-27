@@ -9,28 +9,55 @@
 import Foundation
 import FSCalendar
 
-protocol TaskDetailViewModelable: CalenderPopupDelegate {
-  var changedSelectedDataLabel: ((_ date: String) -> Void)? { get set }
-  
-  func setTaskCategories(category: TaskCategories)
-  func setTaskType(type: TaskTypes)
-}
-
 class TaskDetailViewModel: TaskDetailViewModelable {
+  var dataHelper: DataHelper = DataHelper()
   var changedSelectedDataLabel: ((String) -> Void)?
+
+  var task: Task = Task(title: "", date: Date())
+  
+  var hasTask: Bool = false
+  
+  var confirmTitle: String {
+    return hasTask ? Strings.Buttons.update : Strings.Buttons.save
+  }
+  
+  var title: String {
+    return hasTask ? Strings.Titles.create : Strings.Titles.detail
+  }
+  
+  init() {
+    DispatchQueue.main.async {
+      self.hasTask = self.dataHelper.hasTask(id: self.task.id)
+    }
+  }
   
   func setTaskCategories(category: TaskCategories) {
-    print(category.title)
+    task.taskCategory = category
   }
   
   func setTaskType(type: TaskTypes) {
-    print(type.title)
+    task.taskType = type
+  }
+  
+  func save(title: String?, desc: String?, success: () -> Void, error: (_ message: String) -> Void) {
+    if let title = title, !title.isEmpty {
+      task.title = title
+      task.desc = desc
+      dataHelper.storeTask(task: task)
+      success()
+    } else {
+      error(Strings.Errors.emptyTitle)
+    }
+  }
+  
+  func delete(success: @escaping () -> Void) {
+    dataHelper.deleteTask(id: task.id, completion: success)
   }
 }
 
 extension TaskDetailViewModel {
-  func calendar(_ calender: FSCalendar, selectedDate: Date?) {
-    guard let selectedDate = selectedDate else { return }
+  func calendar(_ calender: FSCalendar, selectedDate: Date) {
     changedSelectedDataLabel?(selectedDate.dateToStirng())
+    task.date = selectedDate
   }
 }

@@ -1,20 +1,36 @@
 PODS:
+  - DynamicBlurView (4.1.0)
   - FSCalendar (2.8.1)
+  - KRActivityIndicatorView (3.0.5)
+  - KRProgressHUD (3.4.5):
+    - KRActivityIndicatorView (= 3.0.5)
+  - PopupDialog (1.1.1):
+    - DynamicBlurView (~> 4.0)
   - SwiftLint (0.39.2)
 
 DEPENDENCIES:
   - FSCalendar
+  - KRProgressHUD
+  - PopupDialog
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - DynamicBlurView
     - FSCalendar
+    - KRActivityIndicatorView
+    - KRProgressHUD
+    - PopupDialog
     - SwiftLint
 
 SPEC CHECKSUMS:
+  DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
+  KRActivityIndicatorView: 912bc0413d98340f384b12a4e1e6aa8f42fb377d
+  KRProgressHUD: df4cdc3a1baf708d4276a089ee34d133fa9a6f3e
+  PopupDialog: 720c92befd8bc23c13442254945213db5612f149
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: 24cdfd14cd0fb9cf7d02e3eea24e92c0a01dfaa4
+PODFILE CHECKSUM: 0a3c0aac4063b398e7d18a03ff1714a0e7b8e55f
 
 COCOAPODS: 1.9.1

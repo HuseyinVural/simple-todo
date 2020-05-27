@@ -6,6 +6,8 @@ target 'Do' do
   use_frameworks!
   pod 'SwiftLint'
   pod 'FSCalendar'
+  pod 'PopupDialog'
+  pod "KRProgressHUD"
   # Pods for Do
 
 end
