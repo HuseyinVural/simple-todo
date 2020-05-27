@@ -75,6 +75,7 @@ class TaskDetailViewController: BaseViewController {
                     showSuccessHud()
     }, error: { message in
       let popup = PopupDialog(title: Strings.Errors.genericTitle, message: message)
+      popup.view.accessibilityIdentifier = "ErrorPopup"
       popup.addButtons([CancelButton(title: Strings.Buttons.okey) {}])
       self.present(popup, animated: true, completion: nil)
     })

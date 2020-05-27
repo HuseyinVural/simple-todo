@@ -275,6 +275,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xPs-gP-jz0">
                                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                         <color key="backgroundColor" red="0.40632551909999998" green="0.47037708760000002" blue="0.80005818610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="XC_bottomAddButton"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="20" minY="20" maxX="20" maxY="20"/>
@@ -469,6 +470,7 @@
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brad's Birthday" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Rj-55-ExS">
                                                                             <rect key="frame" x="0.0" y="0.0" width="227" height="21.5"/>
+                                                                            <accessibility key="accessibilityConfiguration" identifier="XC_TaskTitle"/>
                                                                             <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
@@ -632,6 +634,7 @@
                                                     <subviews>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Task Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="keF-uG-y3s">
                                                             <rect key="frame" x="15" y="15" width="344" height="20.5"/>
+                                                            <accessibility key="accessibilityConfiguration" identifier="XC_TaskTitle" label="XC_TaskTitle"/>
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits"/>
@@ -653,9 +656,16 @@
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcm-Xn-N7Q">
                                                     <rect key="frame" x="20" y="80" width="374" height="100"/>
                                                     <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82g-Nt-w85">
+                                                            <rect key="frame" x="15" y="16" width="349" height="19"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                            <color key="textColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PnK-N1-YPw">
                                                             <rect key="frame" x="10" y="9" width="354" height="76"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <accessibility key="accessibilityConfiguration" identifier="XC_TaskDesc"/>
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -663,12 +673,6 @@
                                                                 <outlet property="delegate" destination="Upx-tc-hN3" id="VCB-QL-J9D"/>
                                                             </connections>
                                                         </textView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82g-Nt-w85">
-                                                            <rect key="frame" x="15" y="16" width="349" height="19"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                                            <color key="textColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.40632551909999998" green="0.47037708760000002" blue="0.80005818610000001" alpha="0.096826840750000004" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
@@ -706,6 +710,7 @@
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mta-HI-YzX">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                                            <accessibility key="accessibilityConfiguration" identifier="XC_ShowDataPicker"/>
                                                             <connections>
                                                                 <action selector="tapActionDateArea:" destination="Upx-tc-hN3" eventType="touchUpInside" id="zAY-os-IyT"/>
                                                             </connections>
@@ -765,7 +770,8 @@
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKz-0S-IK0">
                                         <rect key="frame" x="20" y="704" width="374" height="50"/>
-                                        <color key="backgroundColor" red="0.40632551909999998" green="0.47037708760000002" blue="0.80005818610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.40784313725490196" green="0.47058823529411764" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="XC_Done_Button"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="gOQ-bv-vd6"/>
                                         </constraints>
@@ -806,7 +812,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="RY0-7o-YsJ">
                         <barButtonItem key="backBarButtonItem" title="  " id="rU4-uD-JYL"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="hO1-J9-KkF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="hO1-J9-KkF" userLabel="DeleteButton">
                             <color key="tintColor" red="0.40632551909999998" green="0.47037708760000002" blue="0.80005818610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="tapDeleteAction:" destination="Upx-tc-hN3" id="a0x-g4-7u6"/>
