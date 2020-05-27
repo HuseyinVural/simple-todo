@@ -1,7 +1,5 @@
 excluded: # paths to ignore during linting. Takes precedence over `included`.
 - Pods
-- DH/VersaPlayer Static Pod Files
-- DH/Rewritten/General Usage/General View/Text Kit
 
 opt_in_rules: # some rules are only opt-in
 - anyobject_protocol

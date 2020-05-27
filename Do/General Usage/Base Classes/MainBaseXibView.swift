@@ -13,14 +13,12 @@ class MainBaseXibView: UIView {
     super.init(frame: frame)
     self.fromNib()
     self.viewDidLoad()
-    print("startNib")
   }
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     self.fromNib()
     self.viewDidLoad()
-    print("stroy startNib")
   }
   
   func viewDidLoad() {

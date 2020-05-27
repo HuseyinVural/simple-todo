@@ -10,9 +10,16 @@ import Foundation
 import CoreData
 
 class CoreDataStack {
-  static let shared = CoreDataStack()
+  static var shared = CoreDataStack()
+  
+  var customConteiner: NSPersistentContainer?
 
   lazy var persistentContainer: NSPersistentContainer = {
+    
+    if let custom = self.customConteiner {
+      return custom
+    }
+    
     /*
      The persistent container for the application. This implementation
      creates and returns a container, having loaded the store for the
