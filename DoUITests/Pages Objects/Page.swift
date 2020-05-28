@@ -1,5 +1,5 @@
 //
-//  Page.swift
+//  Page .swift
 //  DoUITests
 //
 //  Created by Hüseyin Vural on 28.05.2020.

@@ -12,13 +12,13 @@ import PopupDialog
 
 class TaskDetailViewController: BaseViewController {
   
-  @IBOutlet weak var titleField: UITextField!
-  @IBOutlet weak var descPlaceholder: UILabel!
-  @IBOutlet weak var descTextView: UITextView!
-  @IBOutlet weak var selectedDateLabel: UILabel!
-  @IBOutlet weak var taskCategoriesView: TaskCategoriesView!
-  @IBOutlet weak var taskTypeView: TaskTypesView!
-  @IBOutlet weak var confirmButton: UIButton!
+  @IBOutlet weak private var titleField: UITextField!
+  @IBOutlet weak private var descPlaceholder: UILabel!
+  @IBOutlet weak private var descTextView: UITextView!
+  @IBOutlet weak private var selectedDateLabel: UILabel!
+  @IBOutlet weak private var taskCategoriesView: TaskCategoriesView!
+  @IBOutlet weak private var taskTypeView: TaskTypesView!
+  @IBOutlet weak private var confirmButton: UIButton!
   
   var viewModel: TaskDetailViewModelable = TaskDetailViewModel()
   
@@ -83,10 +83,15 @@ class TaskDetailViewController: BaseViewController {
   
 }
 
-extension TaskDetailViewController: UITextViewDelegate {
+extension TaskDetailViewController: UITextViewDelegate, UITextFieldDelegate {
   func textViewDidChange(_ textView: UITextView) {
     DispatchQueue.main.async {
       self.descPlaceholder.isHidden = !textView.text.isEmpty
     }
+  }
+  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+      textField.resignFirstResponder()
+      return true
   }
 }

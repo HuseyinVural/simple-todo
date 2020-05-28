@@ -9,8 +9,8 @@
 import UIKit
 import CoreData
 
-/// Henüz UI testler üzerinde kapsamlı bir çalışma ve test dataları için bir plan yapmadığım için
-/// Bu dummy logic ile UI test başlangıçarında testlerin çalışabilmesi için task oluşturuyorm
+/// I haven't made a comprehensive study on UI tests and a plan for test data yet because
+/// I create fake data for the tests when the UI test starts with dummy logic
 class InitialDataGenerator {
   static func install() {
     if ProcessInfo.processInfo.arguments.contains("IS_RUNNING_UITEST") {

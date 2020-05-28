@@ -15,13 +15,13 @@ struct Strings {
   }
   
   struct Buttons {
-    static let okey: String = "OKEY"
+    static let okey: String = "OKAY"
     static let update: String = "UPDATE"
     static let save: String = "SAVE"
   }
 
   struct Titles {
-    static let create: String = "CREATE TAS"
+    static let create: String = "CREATE TASK"
     static let detail: String = "TASK DETAIL"
   }
 }

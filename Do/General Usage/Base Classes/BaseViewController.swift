@@ -10,6 +10,7 @@ import UIKit
 import KRProgressHUD
 import PopupDialog
 import AudioToolbox
+import os.log
 
 class BaseViewController: UIViewController {
   override func viewDidLoad() {
@@ -17,26 +18,22 @@ class BaseViewController: UIViewController {
     navigationController?.installDefaultNavigationBar()
     navigationController?.installBackButton()
   }
-  
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-  }
-  
+
   func showSuccessHud() {
     KRProgressHUD.showSuccess()
     AudioServicesPlaySystemSound(Constants.vibration)
   }
   
   deinit {
-    print("Deinit Init \(self)")
+    os_log("Deinit Init %@", self)
   }
 }
 
 extension BaseViewController {
   final func pushViewController() -> (_ viewController: UIViewController) -> Void {
     return { [weak self] viewController in
+      guard let self = self else { return }
       DispatchQueue.main.async {
-        guard let self = self else { return }
         self.navigationController?.pushViewController(viewController, animated: true)
       }
     }

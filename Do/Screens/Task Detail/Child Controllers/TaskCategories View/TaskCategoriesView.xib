@@ -21,19 +21,19 @@
                     <rect key="frame" x="0.0" y="0.0" width="394" height="91"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEv-Ga-CEO">
-                            <rect key="frame" x="0.0" y="5" width="394" height="19"/>
+                            <rect key="frame" x="21" y="5" width="373" height="19"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="XC_TaskCategory" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="R3I-F5-lXw">
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="XC_TaskCategory" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="R3I-F5-lXw">
                             <rect key="frame" x="0.0" y="26" width="394" height="65"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CfI-mX-cFx">
                                 <size key="itemSize" width="127" height="43"/>
                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                             </collectionViewFlowLayout>
                             <cells/>
                         </collectionView>
@@ -46,7 +46,7 @@
                         <constraint firstItem="lEv-Ga-CEO" firstAttribute="top" secondItem="nBY-od-sHp" secondAttribute="top" constant="5" id="PY4-b2-fQM"/>
                         <constraint firstAttribute="trailing" secondItem="R3I-F5-lXw" secondAttribute="trailing" id="T42-yS-bdH"/>
                         <constraint firstItem="R3I-F5-lXw" firstAttribute="top" secondItem="lEv-Ga-CEO" secondAttribute="bottom" constant="2" id="c7G-Ub-MLf"/>
-                        <constraint firstItem="lEv-Ga-CEO" firstAttribute="leading" secondItem="nBY-od-sHp" secondAttribute="leading" id="jDQ-1q-Vzl"/>
+                        <constraint firstItem="lEv-Ga-CEO" firstAttribute="leading" secondItem="nBY-od-sHp" secondAttribute="leading" constant="21" id="jDQ-1q-Vzl"/>
                     </constraints>
                 </view>
             </subviews>

@@ -28,7 +28,7 @@ class TaskListTaskCell: UITableViewCell, Configurable {
   func configure(data: Task?) {
     guard let data = data else { return }
     self.viewModel = TaskListTaskCellViewModel(data: data)
-    
+
     DispatchQueue.main.async {
       self.titleLabel.attributedText = self.viewModel.titleAttributedText
       self.imageAreaCapsule.layer.borderWidth = self.viewModel.boderWidth

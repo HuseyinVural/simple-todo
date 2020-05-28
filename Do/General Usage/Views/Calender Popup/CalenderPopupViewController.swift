@@ -11,7 +11,7 @@ import FSCalendar
 
 class CalenderPopupViewController: BaseXIBViewController {
   
-  @IBOutlet weak var calender: FSCalendar!
+  @IBOutlet weak private var calender: FSCalendar!
   weak var delegate: CalenderPopupDelegate?
   
   override func viewDidLoad() {

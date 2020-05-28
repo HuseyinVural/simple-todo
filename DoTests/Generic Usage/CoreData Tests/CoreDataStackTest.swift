@@ -32,7 +32,7 @@ class CoreDataStackTest: XCTestCase {
     XCTAssertEqual(sut.persistentContainer.persistentStoreDescriptions.first!.type, NSSQLiteStoreType, "Core data store type was not correct.")
   }
   
-  func test_WhenCallSaveContextCahges_ThenDidSaveData() throws {
+  func test_WhenCallSaveContexCahges_ThenDidSaveData() throws {
     //WHEN
     let asyncExpectation = expectation(description: #function)
     let sut = CoreDataStack()
@@ -49,11 +49,13 @@ class CoreDataStackTest: XCTestCase {
     taskEntity.loadProperties(task: task)
     context.insert(taskEntity)
     
+    //Given
     waitForSavedNotification { (_) in
       asyncExpectation.fulfill()
       XCTAssert(true)
     }
     
+    //Then
     sut.saveContext()
     
     waitForExpectations(timeout: 1, handler: nil)
@@ -65,7 +67,7 @@ extension CoreDataStackTest {
     saveNotificationCompleteHandler?(notification)
   }
   
-  func waitForSavedNotification(completeHandler: @escaping ((Notification) -> Void)) {
-      saveNotificationCompleteHandler = completeHandler
+  func waitForSavedNotification(completionHandler: @escaping ((Notification) -> Void)) {
+      saveNotificationCompleteHandler = completionHandler
   }
 }

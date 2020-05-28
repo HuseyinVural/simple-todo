@@ -10,7 +10,7 @@ import UIKit
 
 class TaskListTaskCellViewModel: TaskListTaskCellViewModelable {
   var task: Task
-  var titleAttributedText: NSAttributedString?
+  private(set) var titleAttributedText: NSAttributedString?
   var spot: String?
   var boderWidth: CGFloat = 1
   var imageTintColor: UIColor = UIColor.black
@@ -31,7 +31,7 @@ class TaskListTaskCellViewModel: TaskListTaskCellViewModelable {
     categoryBackground = data.taskCategory?.color ?? UIColor.clear
   }
   
-  func titleAttrbutedString(data: Task) -> NSAttributedString {
+  private func titleAttrbutedString(data: Task) -> NSAttributedString {
     var attrString = NSMutableAttributedString()
     if data.done {
       attrString = NSMutableAttributedString(attributedString: data.title.strikeThrough())
@@ -44,7 +44,7 @@ class TaskListTaskCellViewModel: TaskListTaskCellViewModelable {
     return attrString
   }
 
-  func typeColor(data: Task) -> UIColor {
+  private func typeColor(data: Task) -> UIColor {
     if data.done {
       return UIColor.successGreen
     }
@@ -56,7 +56,7 @@ class TaskListTaskCellViewModel: TaskListTaskCellViewModelable {
     }
   }
   
-  func typeBorderColor(data: Task) -> UIColor {
+  private func typeBorderColor(data: Task) -> UIColor {
     if data.done {
       return UIColor.successGreen
     }
@@ -68,7 +68,7 @@ class TaskListTaskCellViewModel: TaskListTaskCellViewModelable {
     }
   }
   
-  func typeImage(data: Task) -> UIImage? {
+  private func typeImage(data: Task) -> UIImage? {
     if data.done {
       return Images.check_icon
     }

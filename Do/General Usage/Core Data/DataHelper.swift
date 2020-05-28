@@ -20,7 +20,7 @@ protocol TaskDataOperation {
 class DataHelper: TaskDataOperation {
   let logger: ErrorLoggable = ErrorLogger(logHandler: LogHandler())
   
-  func storeTask(task: Task) {
+  public func storeTask(task: Task) {
     let context = CoreDataStack.shared.persistentContainer.viewContext
     context.performAndWait {
       context.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
@@ -38,13 +38,13 @@ class DataHelper: TaskDataOperation {
     }
   }
   
-  func insert(task: Task, context: NSManagedObjectContext) throws {
+  private func insert(task: Task, context: NSManagedObjectContext) throws {
     let taskEntity = TaskEntity(context: context)
     taskEntity.loadProperties(task: task)
     context.insert(taskEntity)
   }
   
-  func update(task: Task, context: NSManagedObjectContext) throws {
+  private func update(task: Task, context: NSManagedObjectContext) throws {
     let req: NSFetchRequest<TaskEntity> = TaskEntity.fetchRequest()
     req.predicate = TaskEntity.Predicates.getTasksWithID(id: task.id).query
     if let object = try req.execute().first {
@@ -52,7 +52,7 @@ class DataHelper: TaskDataOperation {
     }
   }
   
-  func getAllTask(start: Date, end: Date?, completion: @escaping (() -> Void)) {
+  public func getAllTask(start: Date, end: Date?, completion: @escaping (() -> Void)) {
     let context = CoreDataStack.shared.persistentContainer.viewContext
     taskListFetchController.fetchRequest.predicate = TaskEntity.Predicates.getTasks(start: start.startOfDay, end: end?.endOfDay).query
     
@@ -67,7 +67,7 @@ class DataHelper: TaskDataOperation {
     }
   }
   
-  func hasTask(id: UUID) -> Bool {
+  public func hasTask(id: UUID) -> Bool {
     let context = CoreDataStack.shared.persistentContainer.viewContext
     let req: NSFetchRequest<TaskEntity> = TaskEntity.fetchRequest()
     req.predicate = TaskEntity.Predicates.getTasksWithID(id: id).query
@@ -81,7 +81,7 @@ class DataHelper: TaskDataOperation {
     return false
   }
   
-  func deleteTask(id: UUID, completion: @escaping (() -> Void)) {
+  public func deleteTask(id: UUID, completion: @escaping (() -> Void)) {
     let context = CoreDataStack.shared.persistentContainer.viewContext
     let req: NSFetchRequest<TaskEntity> = TaskEntity.fetchRequest()
     req.predicate = TaskEntity.Predicates.getTasksWithID(id: id).query
@@ -99,7 +99,7 @@ class DataHelper: TaskDataOperation {
     }
   }
   
-  lazy var taskListFetchController: NSFetchedResultsController<TaskEntity> = {
+  public lazy var taskListFetchController: NSFetchedResultsController<TaskEntity> = {
     let contex = CoreDataStack.shared.persistentContainer.viewContext
     let req: NSFetchRequest<TaskEntity> = TaskEntity.fetchRequest()
     let sortByTitle = NSSortDescriptor(key: "startDate", ascending: true)

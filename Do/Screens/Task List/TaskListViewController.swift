@@ -11,8 +11,8 @@ import CoreData
 
 class TaskListViewController: BaseViewController {
   
-  @IBOutlet weak var tableView: UITableView!
-  @IBOutlet weak var dateTitle: UILabel!
+  @IBOutlet weak private var tableView: UITableView!
+  @IBOutlet weak private var dateTitle: UILabel!
   
   var viewModel: TaskListViewModelable = TaskListViewModel()
   

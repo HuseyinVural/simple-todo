@@ -10,8 +10,8 @@ import UIKit
 
 class TaskTypesView: MainBaseXibView {
   
-  @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
-  @IBOutlet weak var collectionView: UICollectionView!
+  @IBOutlet weak private var flowLayout: UICollectionViewFlowLayout!
+  @IBOutlet weak private var collectionView: UICollectionView!
   var lastSelected: TaskTypesCell?
   
   weak var parent: TaskDetailViewController?
@@ -31,7 +31,7 @@ class TaskTypesView: MainBaseXibView {
     }
   }
   
-  func setInitialIndicator() {
+  private func setInitialIndicator() {
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
       if let type = self.parent?.viewModel.task.taskType, let index = TaskTypes.allCases.firstIndex(of: type) {
         self.collectionView.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .centeredHorizontally)

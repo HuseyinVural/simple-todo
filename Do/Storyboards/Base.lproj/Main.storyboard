@@ -638,6 +638,9 @@
                                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits"/>
+                                                            <connections>
+                                                                <outlet property="delegate" destination="Upx-tc-hN3" id="3P7-lS-0X9"/>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.40632551909999998" green="0.47037708760000002" blue="0.80005818610000001" alpha="0.096826840753424653" colorSpace="custom" customColorSpace="displayP3"/>
@@ -736,13 +739,13 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45R-Mb-hdg" customClass="TaskCategoriesView" customModule="Do" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="253" width="394" height="90"/>
+                                                    <rect key="frame" x="0.0" y="253" width="414" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="90" id="hVJ-W0-bPl"/>
                                                     </constraints>
                                                 </containerView>
                                                 <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3v-pd-jD3" customClass="TaskTypesView" customModule="Do" customModuleProvider="target">
-                                                    <rect key="frame" x="20" y="353" width="394" height="90"/>
+                                                    <rect key="frame" x="0.0" y="353" width="414" height="90"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="90" id="3Hb-9h-18d"/>
                                                     </constraints>
@@ -756,7 +759,7 @@
                                                 <constraint firstItem="45R-Mb-hdg" firstAttribute="top" secondItem="55V-NP-hxs" secondAttribute="bottom" constant="13" id="Tq6-jN-Uyg"/>
                                                 <constraint firstAttribute="trailing" secondItem="45R-Mb-hdg" secondAttribute="trailing" id="YCg-LX-URk"/>
                                                 <constraint firstAttribute="trailing" secondItem="P6E-JA-xo8" secondAttribute="trailing" constant="20" id="ZbA-ob-Gmc"/>
-                                                <constraint firstItem="a3v-pd-jD3" firstAttribute="leading" secondItem="Bs9-Uo-LjX" secondAttribute="leading" constant="20" id="bhw-vI-oYS"/>
+                                                <constraint firstItem="a3v-pd-jD3" firstAttribute="leading" secondItem="Bs9-Uo-LjX" secondAttribute="leading" id="bhw-vI-oYS"/>
                                                 <constraint firstItem="fcm-Xn-N7Q" firstAttribute="leading" secondItem="Bs9-Uo-LjX" secondAttribute="leading" constant="20" id="dcI-BQ-BU4"/>
                                                 <constraint firstItem="P6E-JA-xo8" firstAttribute="top" secondItem="Bs9-Uo-LjX" secondAttribute="top" constant="20" id="fKr-hg-nW7"/>
                                                 <constraint firstItem="P6E-JA-xo8" firstAttribute="leading" secondItem="Bs9-Uo-LjX" secondAttribute="leading" constant="20" id="hzO-M1-AWv"/>
@@ -764,7 +767,7 @@
                                                 <constraint firstItem="a3v-pd-jD3" firstAttribute="top" secondItem="45R-Mb-hdg" secondAttribute="bottom" constant="10" id="kfe-sj-U47"/>
                                                 <constraint firstAttribute="trailing" secondItem="fcm-Xn-N7Q" secondAttribute="trailing" constant="20" id="s2o-dW-1cH"/>
                                                 <constraint firstAttribute="trailing" secondItem="a3v-pd-jD3" secondAttribute="trailing" id="tj5-PK-iLY"/>
-                                                <constraint firstItem="45R-Mb-hdg" firstAttribute="leading" secondItem="Bs9-Uo-LjX" secondAttribute="leading" constant="20" id="tzQ-gF-4Mw"/>
+                                                <constraint firstItem="45R-Mb-hdg" firstAttribute="leading" secondItem="Bs9-Uo-LjX" secondAttribute="leading" id="tzQ-gF-4Mw"/>
                                             </constraints>
                                         </view>
                                     </tableView>

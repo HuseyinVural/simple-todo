@@ -88,7 +88,7 @@ class AllTaskViewControllerTest: XCTestCase {
     waitForExpectations(timeout: 1, handler: nil)
   }
   
-  func test_WhenCallAddNewActionMethode_ThenDidCallViewModelMethode() throws {
+  func test_WhenCallAddNewActionMethod_ThenDidCallViewModelMethod() throws {
     //Given
     let sut = ViewControllers.allTask
     let spyModel = GenericTestDouble.SpyAllTaskViewModel()

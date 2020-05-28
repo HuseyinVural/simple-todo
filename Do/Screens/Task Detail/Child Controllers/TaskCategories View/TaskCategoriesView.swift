@@ -10,18 +10,18 @@ import UIKit
 
 class TaskCategoriesView: MainBaseXibView {
   
-  @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
-  @IBOutlet weak var collectionView: UICollectionView!
+  @IBOutlet weak private var flowLayout: UICollectionViewFlowLayout!
+  @IBOutlet weak private var collectionView: UICollectionView!
   var lastSelected: TaskCategoriesCell?
 
   weak var parent: TaskDetailViewController?
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    setDefultUI()
+    setDefaultUI()
   }
   
-  func setDefultUI() {
+  func setDefaultUI() {
     DispatchQueue.main.async {
       self.collectionView.register(UINib(nibName: TaskCategoriesCell.identifier(), bundle: nil), forCellWithReuseIdentifier: TaskCategoriesCell.identifier())
       self.flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -32,7 +32,7 @@ class TaskCategoriesView: MainBaseXibView {
     }
   }
   
-  func setInitialIndicator() {
+  private func setInitialIndicator() {
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
       if let type = self.parent?.viewModel.task.taskCategory, let index = TaskCategories.allCases.firstIndex(of: type) {
         self.collectionView.selectItem(at: IndexPath(item: index, section: 0), animated: true, scrollPosition: .centeredHorizontally)

@@ -10,9 +10,10 @@ import XCTest
 @testable import Do
 import CoreData
 
-/// DataHelper altında çok soyutlanmış bir yapım yok, daha kapsamlı bir planda elbette olabilir
-/// Bu durum altında hali hazırda SDK içinde test edilmiş olan CoreData işlemlerini, *inMemory* *geçici* bir store a alıp temel task işlemlerini test ediyoruz.
-/// Unit'in biraz dışına çıkmış olabilir hiç olmamasındansa önemli olduğunu düşündüğüm bu alanı *Unit* ve *Integretion* arası bir yapı ile hızlıca test etmek istedim
+/// There is no much-abstracted structure in DataHelper's logic, it is of course possible in a more comprehensive plan.
+/// That's why, I'm testing core task operations by moving CoreData processes, which have already been tested in the SDK, to a * inMemory * * temporary * store.
+/// It may look slightly different from the unit test rules, I thought that was better than nothing so I wanted to test it quickly by building a structure between * Unit * and * Integration *
+
 class DataHelperTest: XCTestCase {
   
   override func setUpWithError() throws {
@@ -21,11 +22,7 @@ class DataHelperTest: XCTestCase {
     CoreDataStack.shared = spyCoreDataStack
   }
   
-  override func tearDownWithError() throws {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-  }
-  
-  func test_WhenCallTaskStoreMethodeWithNewObject_ThenDidCreateTask() throws {
+  func test_WhenCallTaskStoreMethodWithNewObject_ThenDidCreateTask() throws {
     //Given
     let asyncExpectation = expectation(description: #function)
     let sut: DataHelper = DataHelper()
@@ -43,7 +40,7 @@ class DataHelperTest: XCTestCase {
     waitForExpectations(timeout: 1, handler: nil)
   }
   
-  func test_WhenCallTaskStoreMethodeWithExitisObject_ThenDidUpdateTask() throws {
+  func test_WhenCallTaskStoreMethodWithExitisObject_ThenDidUpdateTask() throws {
     //Given
     let asyncExpectation = expectation(description: #function)
     let sut: DataHelper = DataHelper()
@@ -72,7 +69,7 @@ class DataHelperTest: XCTestCase {
     waitForExpectations(timeout: 1, handler: nil)
   }
   
-  func test_WhenCallTaskGetAllMethode_ThenDidSetFetchConttroler() throws {
+  func test_WhenCallTaskGetAllMethod_ThenDidSetFetchController() throws {
     //Given
     let asyncExpectation = expectation(description: #function)
     let sut: DataHelper = DataHelper()
@@ -91,7 +88,7 @@ class DataHelperTest: XCTestCase {
     waitForExpectations(timeout: 1, handler: nil)
   }
   
-  func test_WhenCallTaskDeleteMethode_ThenDidRemoveTask() throws {
+  func test_WhenCallTaskDeleteMethod_ThenDidRemoveTask() throws {
     //Given
     let asyncExpectation = expectation(description: #function)
     let sut: DataHelper = DataHelper()

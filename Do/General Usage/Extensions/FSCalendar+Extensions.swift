@@ -11,6 +11,6 @@ import FSCalendar
 
 extension FSCalendar {
   var selectedLast: Date? {
-    return self.selectedDates.count == 1 ? nil : self.selectedDates.last
+    return selectedDates.count == 1 ? nil : selectedDates.last
   }
 }

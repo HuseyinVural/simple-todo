@@ -38,7 +38,7 @@ class AllTaskViewModelTest: XCTestCase {
     waitForExpectations(timeout: 1, handler: nil)
   }
   
-  func test_WhenLoadTaskMethodeMethode_ThenCallDataUpdateClosure() throws {
+  func test_WhenLoadTaskMethod_ThenCallDataUpdateClosure() throws {
     //Given
     let asyncExpectation = expectation(description: #function)
     let sut = AllTaskViewModel()

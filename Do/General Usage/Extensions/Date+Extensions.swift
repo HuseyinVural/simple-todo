@@ -23,7 +23,7 @@ extension Date {
     }
   }
   
-  var defaultFormat: String {
+  private var defaultFormat: String {
     if datePrefix.isEmpty {
       return "E, MMM d"
     } else {
@@ -31,7 +31,7 @@ extension Date {
     }
   }
   
-  var datePrefix: String {
+  private var datePrefix: String {
     let calendar = Calendar.current
     if calendar.isDateInToday(self) || calendar.isDateInTomorrow(self) {
       let dateFormatter = DateFormatter()
