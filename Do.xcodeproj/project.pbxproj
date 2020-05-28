@@ -62,6 +62,7 @@
 		0664C2A6247F23B100B638DF /* AllTasksPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0664C2A5247F23B100B638DF /* AllTasksPage.swift */; };
 		0664C2A8247F23DD00B638DF /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0664C2A7247F23DD00B638DF /* Page.swift */; };
 		0664C2AC247F248700B638DF /* XCUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0664C2AB247F248700B638DF /* XCUIElement.swift */; };
+		0664C2AE247FA75000B638DF /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = 0664C2AD247FA75000B638DF /* Readme.md */; };
 		0673F75D247C7E7900A9C8C1 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0673F75C247C7E7900A9C8C1 /* CoreDataStack.swift */; };
 		0673F75F247C7F6400A9C8C1 /* TaskDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0673F75E247C7F6400A9C8C1 /* TaskDetailViewModel.swift */; };
 		0673F767247D32B600A9C8C1 /* CalenderPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0673F765247D32B600A9C8C1 /* CalenderPopupViewController.swift */; };
@@ -175,6 +176,7 @@
 		0664C2A5247F23B100B638DF /* AllTasksPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTasksPage.swift; sourceTree = "<group>"; };
 		0664C2A7247F23DD00B638DF /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		0664C2AB247F248700B638DF /* XCUIElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCUIElement.swift; sourceTree = "<group>"; };
+		0664C2AD247FA75000B638DF /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		0673F75C247C7E7900A9C8C1 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		0673F75E247C7F6400A9C8C1 /* TaskDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewModel.swift; sourceTree = "<group>"; };
 		0673F765247D32B600A9C8C1 /* CalenderPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderPopupViewController.swift; sourceTree = "<group>"; };
@@ -494,6 +496,7 @@
 		06632857247C0779007F86F7 = {
 			isa = PBXGroup;
 			children = (
+				0664C2AD247FA75000B638DF /* Readme.md */,
 				06C176F4247C0F3B005CB553 /* .swiftlint.yml */,
 				06632862247C0779007F86F7 /* Do */,
 				065C4F33247EAC5200D481EA /* DoTests */,
@@ -916,6 +919,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0664C2A8247F23DD00B638DF /* Page.swift in Sources */,
+				0664C2AE247FA75000B638DF /* Readme.md in Sources */,
 				0664C2A6247F23B100B638DF /* AllTasksPage.swift in Sources */,
 				0664C2AC247F248700B638DF /* XCUIElement.swift in Sources */,
 				0664C2A4247F236A00B638DF /* TaskDetailPage.swift in Sources */,
